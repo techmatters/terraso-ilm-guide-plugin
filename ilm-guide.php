@@ -19,5 +19,6 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+define( 'ILM_GUIDE_VERSION', '1.0.0' );
 
 require_once __DIR__ . '/includes/class-ilm-guide.php';
