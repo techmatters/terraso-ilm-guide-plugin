@@ -72,26 +72,28 @@ class ILM_Guide {
 	 * Add actions and filters.
 	 */
 	public static function late_hooks() {
-		if ( 'guide' === get_post_type() ) {
+		// if ( 'guide' !== get_post_type() ) {
+		// 	return;
+		// }
+		$ext = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? 'src' : 'min';
 
-			if ( 'ilm-output' === self::get_post_type() ) {
-				$ext = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? 'src' : 'min';
+		wp_enqueue_style( 'ilm-guide', plugins_url( "assets/css/ilm-guide.{$ext}.css", __DIR__), [], ILM_GUIDE_VERSION );
 
-				wp_enqueue_script( 'plausible-analytics-terraso', get_stylesheet_directory_uri() . "/assets/js/plausible.${ext}.js", [], THEME_VERSION, false );
-			}
-
-			// redirect tools pages to corresponding outputs.
-			if ( 'ilm-tool' === self::get_post_type() ) {
-				wp_safe_redirect( get_the_permalink( wp_get_post_parent_id() ) );
-				exit();
-			}
-
-			add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
-			add_filter( 'get_post_metadata', [ __CLASS__, 'disable_zakra_header' ], 10, 5 );
-			add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
-			add_filter( 'the_content', [ __CLASS__, 'the_content' ] );
-			remove_action( 'zakra_after_single_post_content', 'zakra_post_navigation', 10 );
+		if ( 'ilm-output' === self::get_post_type() ) {
+			wp_enqueue_script( 'plausible-analytics-terraso', plugins_url( "assets/js/plausible.{$type}.js", __DIR__), [], ILM_GUIDE_VERSION, false );
 		}
+
+		// redirect tools pages to corresponding outputs.
+		if ( 'ilm-tool' === self::get_post_type() ) {
+			wp_safe_redirect( get_the_permalink( wp_get_post_parent_id() ) );
+			exit();
+		}
+
+		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
+		add_filter( 'get_post_metadata', [ __CLASS__, 'disable_zakra_header' ], 10, 5 );
+		add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
+		add_filter( 'the_content', [ __CLASS__, 'the_content' ] );
+		remove_action( 'zakra_after_single_post_content', 'zakra_post_navigation', 10 );
 	}
 
 	/**
