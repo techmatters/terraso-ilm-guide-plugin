@@ -40,6 +40,8 @@ class ILM_Guide {
 		add_action( 'pre_get_posts', [ __CLASS__, 'guide_rewrite' ] );
 		add_filter( 'manage_guide_posts_columns', [ __CLASS__, 'guide_admin_columns' ] );
 		add_action( 'manage_guide_posts_custom_column', [ __CLASS__, 'guide_type_column_content' ], 10, 2 );
+		add_action( 'init', [ __CLASS__, 'register_post_type' ] );
+		add_action( 'init', [ __CLASS__, 'register_taxonomy' ] );
 	}
 
 	/**
@@ -304,6 +306,132 @@ class ILM_Guide {
 			$result = self::get_breadcrumbs() . '<h1>' . self::get_section_image() . esc_html( get_the_title() ) . '</h1>';
 		}
 		return $result . $content;
+	}
+
+	/**
+	 * Register ILM Guide post type.
+	 */
+	public static function register_post_type() {
+		/**
+		 * Post Type: Guide Entries.
+		 */
+
+		$labels = [
+			'name'          => esc_html__( 'Guide Entries', 'terraso' ),
+			'singular_name' => esc_html__( 'Guide Entry', 'terraso' ),
+			'menu_name'     => esc_html__( 'ILM Guide', 'terraso' ),
+		];
+
+		$args = [
+			'label'                 => esc_html__( 'Guide Entries', 'terraso' ),
+			'labels'                => $labels,
+			'description'           => '',
+			'public'                => true,
+			'publicly_queryable'    => true,
+			'show_ui'               => true,
+			'show_in_rest'          => true,
+			'rest_base'             => '',
+			'rest_controller_class' => 'WP_REST_Posts_Controller',
+			'rest_namespace'        => 'wp/v2',
+			'has_archive'           => false,
+			'show_in_menu'          => true,
+			'show_in_nav_menus'     => true,
+			'delete_with_user'      => false,
+			'exclude_from_search'   => false,
+			'capability_type'       => 'post',
+			'map_meta_cap'          => true,
+			'hierarchical'          => true,
+			'can_export'            => true,
+			'rewrite'               => [
+				'slug'       => 'guide',
+				'with_front' => true,
+			],
+			'query_var'             => true,
+			'menu_position'         => 20,
+			'menu_icon'             => 'dashicons-book',
+			'supports'              => [ 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes' ],
+			'taxonomies'            => [ 'ilm_tag' ],
+			'show_in_graphql'       => false,
+		];
+
+		register_post_type( 'guide', $args );
+	}
+
+	/**
+	 * Register ILM Types and ILM Tags taxonomies.
+	 */
+	public static function register_taxonomy() {
+		/**
+		 * Taxonomy: Entry Types.
+		 */
+
+		$ilm_type_labels = [
+			'name'          => esc_html__( 'Entry Types', 'terraso' ),
+			'singular_name' => esc_html__( 'Entry Type', 'terraso' ),
+		];
+
+		$ilm_tyoe_args = [
+			'label'                 => esc_html__( 'Entry Types', 'terraso' ),
+			'labels'                => $ilm_type_labels,
+			'public'                => true,
+			'publicly_queryable'    => false,
+			'hierarchical'          => false,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'show_in_nav_menus'     => true,
+			'query_var'             => true,
+			'rewrite'               => [
+				'slug'       => 'ilm_type',
+				'with_front' => true,
+			],
+			'show_admin_column'     => false,
+			'show_in_rest'          => true,
+			'show_tagcloud'         => false,
+			'rest_base'             => 'ilm_type',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+			'rest_namespace'        => 'wp/v2',
+			'show_in_quick_edit'    => true,
+			'sort'                  => false,
+			'show_in_graphql'       => false,
+		];
+
+		/**
+		 * Taxonomy: Tags.
+		 */
+
+		$ilm_tag_labels = [
+			'name'          => esc_html__( 'Tags', 'terraso' ),
+			'singular_name' => esc_html__( 'Tag', 'terraso' ),
+		];
+
+
+		$ilm_type_args = [
+			'label'                 => esc_html__( 'Tags', 'terraso' ),
+			'labels'                => $ilm_tag_labels,
+			'public'                => true,
+			'publicly_queryable'    => false,
+			'hierarchical'          => false,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'show_in_nav_menus'     => true,
+			'query_var'             => true,
+			'rewrite'               => [
+				'slug'       => 'ilm_tag',
+				'with_front' => true,
+			],
+			'show_admin_column'     => false,
+			'show_in_rest'          => true,
+			'show_tagcloud'         => false,
+			'rest_base'             => 'ilm_tag',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+			'rest_namespace'        => 'wp/v2',
+			'show_in_quick_edit'    => true,
+			'sort'                  => false,
+			'show_in_graphql'       => false,
+		];
+
+		register_taxonomy( 'ilm_type', [ 'guide' ], $ilm_tyoe_args );
+		register_taxonomy( 'ilm_tag', [ 'guide' ], $ilm_type_args );
 	}
 
 }
