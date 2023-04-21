@@ -72,9 +72,10 @@ class ILM_Guide {
 	 * Add actions and filters.
 	 */
 	public static function late_hooks() {
-		// if ( 'guide' !== get_post_type() ) {
-		// 	return;
-		// }
+		if ( 'guide' !== get_post_type() ) {
+			return;
+		}
+
 		$ext = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? 'src' : 'min';
 
 		wp_enqueue_style( 'ilm-guide', plugins_url( "assets/css/ilm-guide.{$ext}.css", __DIR__), [], ILM_GUIDE_VERSION );
