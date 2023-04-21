@@ -81,7 +81,7 @@ class ILM_Guide {
 		wp_enqueue_style( 'ilm-guide', plugins_url( "assets/css/ilm-guide.{$ext}.css", __DIR__), [], ILM_GUIDE_VERSION );
 
 		if ( 'ilm-output' === self::get_post_type() ) {
-			wp_enqueue_script( 'plausible-analytics-terraso', plugins_url( "assets/js/plausible.{$type}.js", __DIR__), [], ILM_GUIDE_VERSION, false );
+			wp_enqueue_script( 'plausible-analytics-terraso', plugins_url( "assets/js/plausible.{$ext}.js", __DIR__ ), [], ILM_GUIDE_VERSION, false );
 		}
 
 		// redirect tools pages to corresponding outputs.
