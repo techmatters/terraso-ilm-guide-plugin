@@ -80,7 +80,7 @@ class ILM_Guide {
 
 		$ext = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? 'src' : 'min';
 
-		wp_enqueue_style( 'ilm-guide', plugins_url( "assets/css/ilm-guide.{$ext}.css", __DIR__), [], ILM_GUIDE_VERSION );
+		wp_enqueue_style( 'ilm-guide', plugins_url( "assets/css/ilm-guide.{$ext}.css", __DIR__ ), [], ILM_GUIDE_VERSION );
 
 		if ( 'ilm-output' === self::get_post_type() ) {
 			wp_enqueue_script( 'plausible-analytics-terraso', plugins_url( "assets/js/plausible.{$ext}.js", __DIR__ ), [], ILM_GUIDE_VERSION, false );
