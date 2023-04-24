@@ -247,7 +247,9 @@ class ILM_Guide {
 	 * Adds the meta box container to Guide CPT posts.
 	 */
 	public static function add_meta_boxes() {
-		add_meta_box( 'zakra-page-setting', esc_html__( 'Page Settings', 'zakra' ), 'Zakra_Meta_Box_Page_Settings::render', [ 'guide' ] );
+		if ( class_exists( 'Zakra_Meta_Box_Page_Settings' ) ) {
+			add_meta_box( 'zakra-page-setting', esc_html__( 'Page Settings', 'zakra' ), 'Zakra_Meta_Box_Page_Settings::render', [ 'guide' ] );
+		}
 	}
 
 	/**
