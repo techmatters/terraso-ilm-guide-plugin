@@ -11,12 +11,49 @@
 	}
 }
 
-.guide-template-default.et_no_sidebar,
+// zakra
 .guide-template-default.tg-site-layout--stretched {
 	.type-guide {
 		background-color: v.$section-bg;
 	}
+}
 
+// divi
+.guide-template-default.et_no_sidebar {
+	.wp-block-columns {
+		grid-template-columns: 1fr 1fr;
+		display: grid;
+		align-items: start;
+	}
+
+	#main-content .container {
+		padding-top: 0;
+	}
+
+	#left-area {
+		// tool list
+		ol {
+			margin: 0 0 1.6rem 1.2rem;
+			list-style-position: outside;
+		}
+
+		// tags
+		ul {
+			padding-left: 0;
+		}
+
+		.tool p {
+			padding-bottom: 1em;
+		}
+
+		.entry-content {
+			padding-top: 0;
+		}
+	}
+}
+
+.guide-template-default.et_no_sidebar,
+.guide-template-default.tg-site-layout--stretched {
 	.entry-content,
 	.guide-outputs,
 	.guide-tools, {
@@ -116,6 +153,10 @@
 				margin: 0 0 3em;
 			}
 		}
+	}
+
+	#left-area .breadcrumbs ul {
+		padding-left: 0;
 	}
 
 	.breadcrumbs {
