@@ -27,7 +27,7 @@
 		?>
 			<section class='tool'>
 				<span class="<?php echo esc_attr( $tool_type ); ?>">
-					<img src="<?php echo esc_url( plugins_url( 'assets/images/icons/'  . $tool_type . '.svg', __DIR__ )  ); ?>" alt="<?php echo esc_attr( $tool_type ); ?>" width="50" height="50" />
+					<img src="<?php echo esc_url( plugins_url( 'assets/images/icons/' . $tool_type . '.svg', __DIR__ ) ); ?>" alt="<?php echo esc_attr( $tool_type ); ?>" width="50" height="50" />
 				</span>
 				<h3><a target="_blank" href="<?php echo esc_url( $tool_link ); ?>"><?php echo esc_html( $tool->post_title ); ?></a></h3>
 				<ul>

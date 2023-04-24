@@ -217,12 +217,12 @@ class ILM_Guide {
 	 *                          or any other object type with an associated meta table.
 	 */
 	public static function disable_page_header( $value, $object_id, $meta_key, $single, $meta_type ) {
-		// Zakra
+		// Zakra.
 		if ( 'zakra_page_header' === $meta_key ) {
 			return '0';
 		}
 
-		// Divi
+		// Divi.
 		if ( '_et_pb_show_title' === $meta_key ) {
 			return 'off';
 		}
@@ -436,25 +436,25 @@ class ILM_Guide {
 	/**
 	 * Get the template part in an output buffer and return it
 	 *
-	 * @param string $template_name
+	 * @param string $template_name Template file name.
 	 */
 	public static function get_template_part( $template_name ) {
 		$located = dirname( __DIR__ ) . '/' . $template_name;
 
 		ob_start();
-		require $located;
+		require $located; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
 		return ob_get_clean();
 	}
 
 	/**
 	 * Post types for which Divi builder is enabled.
 	 *
-	 * @param array $$items
+	 * @param array $post_types Array of post types.
 	 */
-	public static function et_builder_post_types( $items ) {
-		$items[] = self::$items;
+	public static function et_builder_post_types( $post_types ) {
+		$post_types[] = self::POST_TYPE;
 
-		return $items;
+		return $post_types;
 	}
 
 }
