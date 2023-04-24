@@ -33,7 +33,8 @@ class ILM_Guide {
 	 */
 	public static function hooks() {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
-		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'zakra_after_single_post_content' ] );
+		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'after_single_post_content' ] );
+		add_action( 'et_after_post', [ __CLASS__, 'after_single_post_content' ] );
 		add_action( 'init', [ __CLASS__, 'guide_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'allow_svg_tags' ] );
 		add_filter( 'safe_style_css', [ __CLASS__, 'allow_svg_css' ] );
@@ -273,31 +274,21 @@ class ILM_Guide {
 	/**
 	 * Append ILM Guide output and tool content.
 	 */
-	public static function zakra_after_single_post_content() {
+	public static function after_single_post_content() {
 		$post_type = self::get_post_type();
 
-		ob_start();
+		$result = '';
 		if ( 'ilm-element' === $post_type ) {
-			get_template_part(
-				'template-parts/output',
-				'list',
-				[
-					'id'    => get_the_ID(),
-					'title' => get_the_title(),
-				]
+			$result = self::get_template_part(
+				'template-parts/output-list.php',
 			);
 		} elseif ( 'ilm-output' === $post_type ) {
-			get_template_part(
-				'template-parts/tool',
-				'list',
-				[
-					'id'    => get_the_ID(),
-					'title' => get_the_title(),
-				]
+			$result = self::get_template_part(
+				'template-parts/tool-list.php',
 			);
 		}
 
-		echo wp_kses_post( ob_get_clean() );
+		echo wp_kses_post( $result );
 	}
 
 	/**
