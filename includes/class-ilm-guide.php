@@ -222,14 +222,12 @@ class ILM_Guide {
 		}
 
 		// Divi
-		if ( 'guide' === get_post_type() ) {
-			if ( '_et_pb_show_title' === $meta_key ) {
-				return 'off';
-			}
+		if ( '_et_pb_show_title' === $meta_key ) {
+			return 'off';
+		}
 
-			if ( '_et_pb_use_builder' === $meta_key ) {
-				return 'on';
-			}
+		if ( '_et_pb_use_builder' === $meta_key ) {
+			return 'on';
 		}
 
 		return $value;
