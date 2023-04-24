@@ -186,7 +186,7 @@ class ILM_Guide {
 			return;
 		}
 
-		$svg = file_get_contents( get_stylesheet_directory() . '/assets/images/ilm/' . $slug . '.svg' );
+		$svg = file_get_contents( plugins_url( 'images/ilm/' . $slug . '.svg', __DIR__ ) );
 		return '<span class="' . esc_attr( 'section-image ' . $slug ) . '">' . $svg . '</span>';
 	}
 
