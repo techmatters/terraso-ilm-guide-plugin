@@ -93,7 +93,7 @@ class ILM_Guide {
 		}
 
 		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
-		add_filter( 'get_post_metadata', [ __CLASS__, 'disable_zakra_header' ], 10, 5 );
+		add_filter( 'get_post_metadata', [ __CLASS__, 'disable_page_header' ], 10, 5 );
 		add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
 		add_filter( 'the_content', [ __CLASS__, 'the_content' ] );
 		remove_action( 'zakra_after_single_post_content', 'zakra_post_navigation', 10 );
@@ -223,9 +223,15 @@ class ILM_Guide {
 	 * @param string $meta_type Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user',
 	 *                          or any other object type with an associated meta table.
 	 */
-	public static function disable_zakra_header( $value, $object_id, $meta_key, $single, $meta_type ) {
+	public static function disable_page_header( $value, $object_id, $meta_key, $single, $meta_type ) {
+		// Zakra
 		if ( 'zakra_page_header' === $meta_key ) {
 			return '0';
+		}
+
+		// Divi
+		if ( '_et_pb_show_title' === $meta_key && 'guide' === get_post_type() ) {
+			return 'off';
 		}
 
 		return $value;
