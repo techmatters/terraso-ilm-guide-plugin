@@ -35,6 +35,7 @@ class ILM_Guide {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
 		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'after_single_post_content' ] );
 		add_action( 'et_after_post', [ __CLASS__, 'after_single_post_content' ] );
+		add_filter( 'et_builder_post_types', [ __CLASS__, 'et_builder_post_types' ] );
 		add_action( 'init', [ __CLASS__, 'guide_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'allow_svg_tags' ] );
 		add_filter( 'safe_style_css', [ __CLASS__, 'allow_svg_css' ] );
@@ -228,6 +229,10 @@ class ILM_Guide {
 
 		if ( '_et_pb_use_builder' === $meta_key ) {
 			return 'on';
+		}
+
+		if ( '_et_pb_page_layout' === $meta_key ) {
+			return 'et_no_sidebar';
 		}
 
 		return $value;
@@ -439,6 +444,17 @@ class ILM_Guide {
 		ob_start();
 		require $located;
 		return ob_get_clean();
+	}
+
+	/**
+	 * Post types for which Divi builder is enabled.
+	 *
+	 * @param array $$items
+	 */
+	public static function et_builder_post_types( $items ) {
+		$items[] = self::$items;
+
+		return $items;
 	}
 
 }
