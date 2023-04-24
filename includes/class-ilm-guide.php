@@ -141,18 +141,9 @@ class ILM_Guide {
 	 * Print breadcrumbs.
 	 */
 	public static function get_breadcrumbs() {
-		ob_start();
-
-		get_template_part(
-			'template-parts/breadcrumbs',
-			'top',
-			[
-				'id'    => get_the_ID(),
-				'title' => get_the_title(),
-			]
+		return self::get_template_part(
+			'template-parts/breadcrumbs-top.php'
 		);
-
-		return ob_get_clean();
 	}
 
 	/**
@@ -446,6 +437,19 @@ class ILM_Guide {
 
 		register_taxonomy( 'ilm_type', [ 'guide' ], $ilm_tyoe_args );
 		register_taxonomy( 'ilm_tag', [ 'guide' ], $ilm_type_args );
+	}
+
+	/**
+	 * Get the template part in an output buffer and return it
+	 *
+	 * @param string $template_name
+	 */
+	public static function get_template_part( $template_name ) {
+		$located = dirname( __DIR__ ) . '/' . $template_name;
+
+		ob_start();
+		require $located;
+		return ob_get_clean();
 	}
 
 }

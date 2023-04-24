@@ -7,12 +7,12 @@
 
 ?>
 <article class='guide-tools'>
-	<h2><?php echo esc_html( $args['title'] . ' ' . __( 'Tools' ) ); ?></h2>
+	<h2><?php echo esc_html( get_the_title() . ' ' . __( 'Tools' ) ); ?></h2>
 
 	<?php
 		$tools = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_children
 			[
-				'post_parent' => $args['id'],
+				'post_parent' => get_the_ID(),
 				'post_type'   => ILM_Guide::POST_TYPE,
 				'numberposts' => ILM_Guide::POST_LIMIT, // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_numberposts
 			]
@@ -27,7 +27,7 @@
 		?>
 			<section class='tool'>
 				<span class="<?php echo esc_attr( $tool_type ); ?>">
-					<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/icons/' . $tool_type . '.svg' ); ?>" alt="<?php echo esc_attr( $tool_type ); ?>" width="50" height="50" />
+					<img src="<?php echo esc_url( plugins_url( 'assets/images/icons/'  . $tool_type . '.svg', __DIR__ )  ); ?>" alt="<?php echo esc_attr( $tool_type ); ?>" width="50" height="50" />
 				</span>
 				<h3><a target="_blank" href="<?php echo esc_url( $tool_link ); ?>"><?php echo esc_html( $tool->post_title ); ?></a></h3>
 				<ul>

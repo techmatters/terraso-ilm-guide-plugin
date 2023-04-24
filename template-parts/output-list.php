@@ -7,7 +7,7 @@
 
 $outputs = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_children
 	[
-		'post_parent' => $args['id'],
+		'post_parent' => get_the_ID(),
 		'post_type'   => ILM_Guide::POST_TYPE,
 		'numberposts' => ILM_Guide::POST_LIMIT, // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_numberposts
 	]
@@ -17,7 +17,7 @@ $outputs = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.Restricte
 	<h2>
 	<?php
 			echo wp_kses_post( ILM_Guide::get_section_image() );
-			echo esc_html( $args['title'] . ' ' . __( 'Outputs' ) );
+			echo esc_html( get_the_title() . ' ' . __( 'Outputs' ) );
 	?>
 			</h2>
 	<div class='output-wrapper'>
