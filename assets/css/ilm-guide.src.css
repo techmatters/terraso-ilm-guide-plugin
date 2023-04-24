@@ -1,10 +1,32 @@
 /*
  * Colors
  */
-.guide-template-default.et_no_sidebar .type-guide,
 .guide-template-default.tg-site-layout--stretched .type-guide {
   background-color: #f9fcf8;
 }
+
+.guide-template-default.et_no_sidebar .wp-block-columns {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  align-items: start;
+}
+.guide-template-default.et_no_sidebar #main-content .container {
+  padding-top: 0;
+}
+.guide-template-default.et_no_sidebar #left-area ol {
+  margin: 0 0 1.6rem 1.2rem;
+  list-style-position: outside;
+}
+.guide-template-default.et_no_sidebar #left-area ul {
+  padding-left: 0;
+}
+.guide-template-default.et_no_sidebar #left-area .tool p {
+  padding-bottom: 1em;
+}
+.guide-template-default.et_no_sidebar #left-area .entry-content {
+  padding-top: 0;
+}
+
 .guide-template-default.et_no_sidebar .entry-content,
 .guide-template-default.et_no_sidebar .guide-outputs,
 .guide-template-default.et_no_sidebar .guide-tools,
@@ -112,6 +134,10 @@
   .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text {
     margin: 0 0 3em;
   }
+}
+.guide-template-default.et_no_sidebar #left-area .breadcrumbs ul,
+.guide-template-default.tg-site-layout--stretched #left-area .breadcrumbs ul {
+  padding-left: 0;
 }
 .guide-template-default.et_no_sidebar .breadcrumbs,
 .guide-template-default.tg-site-layout--stretched .breadcrumbs {
