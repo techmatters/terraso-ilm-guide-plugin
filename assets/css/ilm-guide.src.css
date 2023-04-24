@@ -508,7 +508,9 @@
 .guide-template-default.tg-site-layout--stretched .wp-block-columns {
   padding: 0;
 }
+.guide-template-default.et_no_sidebar #et-main-area h1,
 .guide-template-default.et_no_sidebar #main h1,
+.guide-template-default.tg-site-layout--stretched #et-main-area h1,
 .guide-template-default.tg-site-layout--stretched #main h1 {
   font-size: 30px;
   font-weight: 700;
