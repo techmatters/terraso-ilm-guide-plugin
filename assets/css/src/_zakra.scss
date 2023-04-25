@@ -1,0 +1,8 @@
+@use "variables" as v;
+
+// zakra
+.guide-template-default.tg-site-layout--stretched {
+	.type-guide {
+		background-color: v.$section-bg;
+	}
+}

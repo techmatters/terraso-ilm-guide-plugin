@@ -1,0 +1,37 @@
+// divi
+.guide-template-default.et_no_sidebar {
+	.wp-block-columns {
+		grid-template-columns: 1fr 1fr;
+		display: grid;
+		align-items: start;
+	}
+
+	#page-container #main-content .intro-element ol {
+		text-indent: -6.5rem;
+	}
+
+	#main-content .container {
+		padding-top: 0;
+	}
+
+	#left-area {
+		// tool list
+		ol {
+			margin: 0 0 1.6rem 1.2rem;
+			list-style-position: outside;
+		}
+
+		// tags
+		ul {
+			padding-left: 0;
+		}
+
+		.tool p {
+			padding-bottom: 1em;
+		}
+
+		.entry-content {
+			padding-top: 0;
+		}
+	}
+}
