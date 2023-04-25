@@ -11,47 +11,6 @@
 	}
 }
 
-// zakra
-.guide-template-default.tg-site-layout--stretched {
-	.type-guide {
-		background-color: v.$section-bg;
-	}
-}
-
-// divi
-.guide-template-default.et_no_sidebar {
-	.wp-block-columns {
-		grid-template-columns: 1fr 1fr;
-		display: grid;
-		align-items: start;
-	}
-
-	#main-content .container {
-		padding-top: 0;
-	}
-
-	#left-area {
-		// tool list
-		ol {
-			margin: 0 0 1.6rem 1.2rem;
-			list-style-position: outside;
-		}
-
-		// tags
-		ul {
-			padding-left: 0;
-		}
-
-		.tool p {
-			padding-bottom: 1em;
-		}
-
-		.entry-content {
-			padding-top: 0;
-		}
-	}
-}
-
 .guide-template-default.et_no_sidebar,
 .guide-template-default.tg-site-layout--stretched {
 	.entry-content,
@@ -231,7 +190,7 @@
 		}
 	}
 
-	.intro-element {
+	#page-container #main-content .intro-element {
 		h2 {
 			font-size: 1.75rem;
 
@@ -404,12 +363,11 @@
 				}
 			}
 
-			> div:first-child {
-				grid-column: span 2;
+			> div {
+				border-style: solid;
 
-				ol {
-					max-width: 600px;
-					margin: 2em auto;
+				> div {
+					padding: 1.5em 1.5em .5em;
 				}
 			}
 
@@ -420,22 +378,49 @@
 
 			> div:nth-child(1) {
 				border-color: v.$dark-brown;
+
+				div {
+					background-color: v.$dark-brown;
+				}
+
+				grid-column: span 2;
+
+				ol {
+					max-width: 600px;
+					margin: 2em auto;
+				}
 			}
 
 			> div:nth-child(2) {
 				border-color: v.$orange;
+
+				div {
+					background-color: v.$orange;
+				}
 			}
 
 			> div:nth-child(3) {
 				border-color: v.$yellow;
+
+				div {
+					background-color: v.$yellow;
+				}
 			}
 
 			> div:nth-child(4) {
 				border-color: v.$green;
+
+				div {
+					background-color: v.$green;
+				}
 			}
 
 			> div:nth-child(5) {
 				border-color: v.$blue;
+
+				div {
+					background-color: v.$blue;
+				}
 			}
 		}
 
