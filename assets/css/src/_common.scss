@@ -100,7 +100,8 @@
 			}
 		}
 
-		.intro-text {
+		.intro-text,
+		#main-content .intro-text {
 			margin: 6em 0;
 
 			@media screen and (min-width: 768px) {
@@ -110,6 +111,7 @@
 
 			a {
 				color: v.$link;
+				text-decoration: underline;
 			}
 
 			// align ILM wheel
@@ -203,6 +205,7 @@
 		}
 	}
 
+	.intro-element,
 	#page-container #main-content .intro-element {
 		h2 {
 			font-size: 1.75rem;
