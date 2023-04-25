@@ -1,12 +1,20 @@
 @use "variables" as v;
 
-@mixin ilm-color($color) {
+@mixin ilm-color-element($color) {
 	.output:hover {
 		border-color: $color;
 	}
 
 	figcaption,
 	.section-image {
+		background-color: $color;
+	}
+}
+
+@mixin ilm-color-block-intro($color) {
+	border-color: $color;
+
+	div {
 		background-color: $color;
 	}
 }
@@ -102,6 +110,11 @@
 
 			a {
 				color: v.$link;
+			}
+
+			// align ILM wheel
+			> div {
+				align-items: start;
 			}
 
 			+ div {
@@ -377,11 +390,7 @@
 			}
 
 			> div:nth-child(1) {
-				border-color: v.$dark-brown;
-
-				div {
-					background-color: v.$dark-brown;
-				}
+				@include ilm-color-block-intro(v.$dark-brown);
 
 				grid-column: span 2;
 
@@ -392,35 +401,19 @@
 			}
 
 			> div:nth-child(2) {
-				border-color: v.$orange;
-
-				div {
-					background-color: v.$orange;
-				}
+				@include ilm-color-block-intro(v.$orange);
 			}
 
 			> div:nth-child(3) {
-				border-color: v.$yellow;
-
-				div {
-					background-color: v.$yellow;
-				}
+				@include ilm-color-block-intro(v.$yellow);
 			}
 
 			> div:nth-child(4) {
-				border-color: v.$green;
-
-				div {
-					background-color: v.$green;
-				}
+				@include ilm-color-block-intro(v.$green);
 			}
 
 			> div:nth-child(5) {
-				border-color: v.$blue;
-
-				div {
-					background-color: v.$blue;
-				}
+				@include ilm-color-block-intro(v.$blue);
 			}
 		}
 
@@ -468,27 +461,27 @@
 
 	&.guide-shared-understanding,
 	&.parent-shared-understanding {
-		@include ilm-color(v.$orange);
+		@include ilm-color-element(v.$orange);
 	}
 
 	&.guide-impact-and-learning,
 	&.parent-impact-and-learning {
-		@include ilm-color(v.$blue);
+		@include ilm-color-element(v.$blue);
 	}
 
 	&.guide-vision-and-planning,
 	&.parent-vision-and-planning {
-		@include ilm-color(v.$yellow);
+		@include ilm-color-element(v.$yellow);
 	}
 
 	&.guide-taking-action,
 	&.parent-taking-action {
-		@include ilm-color(v.$green);
+		@include ilm-color-element(v.$green);
 	}
 
 	&.guide-landscape-partnership,
 	&.parent-landscape-partnership {
-		@include ilm-color(v.$dark-brown);
+		@include ilm-color-element(v.$dark-brown);
 	}
 
 	.wp-block-columns {
