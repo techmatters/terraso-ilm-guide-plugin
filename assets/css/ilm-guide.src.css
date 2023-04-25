@@ -99,6 +99,10 @@
 .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text a {
   color: #076b8e;
 }
+.guide-template-default.et_no_sidebar.guide-intro .intro-text > div,
+.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text > div {
+  align-items: start;
+}
 .guide-template-default.et_no_sidebar.guide-intro .intro-text + div,
 .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text + div {
   padding-top: 6em;
@@ -558,7 +562,7 @@
   }
 }
 
-.guide-template-default.et_no_sidebar .wp-block-columns {
+.guide-template-default.et_no_sidebar .ilm_type-ilm-element .wp-block-columns {
   grid-template-columns: 1fr 1fr;
   display: grid;
   align-items: start;
@@ -583,6 +587,21 @@
   padding-top: 0;
 }
 
+@media (min-width: 1025px) {
+  body .uag-hide-desktop.uagb-google-map__wrap, body .uag-hide-desktop {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .uag-hide-tab.uagb-google-map__wrap, body .uag-hide-tab {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  body .uag-hide-mob.uagb-google-map__wrap, body .uag-hide-mob {
+    display: none !important;
+  }
+}
 .guide-template-default.tg-site-layout--stretched .type-guide {
   background-color: #f9fcf8;
 }
