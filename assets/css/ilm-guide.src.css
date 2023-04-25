@@ -85,31 +85,44 @@
   }
 }
 .guide-template-default.et_no_sidebar.guide-intro .intro-text,
-.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text {
+.guide-template-default.et_no_sidebar.guide-intro #main-content .intro-text,
+.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text,
+.guide-template-default.tg-site-layout--stretched.guide-intro #main-content .intro-text {
   margin: 6em 0;
 }
 @media screen and (min-width: 768px) {
   .guide-template-default.et_no_sidebar.guide-intro .intro-text,
-  .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text {
+  .guide-template-default.et_no_sidebar.guide-intro #main-content .intro-text,
+  .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text,
+  .guide-template-default.tg-site-layout--stretched.guide-intro #main-content .intro-text {
     max-width: calc(100vw - 6em);
     margin: 6em auto;
   }
 }
 .guide-template-default.et_no_sidebar.guide-intro .intro-text a,
-.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text a {
+.guide-template-default.et_no_sidebar.guide-intro #main-content .intro-text a,
+.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text a,
+.guide-template-default.tg-site-layout--stretched.guide-intro #main-content .intro-text a {
   color: #076b8e;
+  text-decoration: underline;
 }
 .guide-template-default.et_no_sidebar.guide-intro .intro-text > div,
-.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text > div {
+.guide-template-default.et_no_sidebar.guide-intro #main-content .intro-text > div,
+.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text > div,
+.guide-template-default.tg-site-layout--stretched.guide-intro #main-content .intro-text > div {
   align-items: start;
 }
 .guide-template-default.et_no_sidebar.guide-intro .intro-text + div,
-.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text + div {
+.guide-template-default.et_no_sidebar.guide-intro #main-content .intro-text + div,
+.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text + div,
+.guide-template-default.tg-site-layout--stretched.guide-intro #main-content .intro-text + div {
   padding-top: 6em;
 }
 @media screen and (max-width: 768px) {
   .guide-template-default.et_no_sidebar.guide-intro .intro-text,
-  .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text {
+  .guide-template-default.et_no_sidebar.guide-intro #main-content .intro-text,
+  .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text,
+  .guide-template-default.tg-site-layout--stretched.guide-intro #main-content .intro-text {
     margin: 0 0 3em;
   }
 }
@@ -192,29 +205,41 @@
     margin: 3em auto;
   }
 }
+.guide-template-default.et_no_sidebar .intro-element h2,
 .guide-template-default.et_no_sidebar #page-container #main-content .intro-element h2,
+.guide-template-default.tg-site-layout--stretched .intro-element h2,
 .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element h2 {
   font-size: 1.75rem;
 }
+.guide-template-default.et_no_sidebar .intro-element h2 a,
 .guide-template-default.et_no_sidebar #page-container #main-content .intro-element h2 a,
+.guide-template-default.tg-site-layout--stretched .intro-element h2 a,
 .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element h2 a {
   color: white;
   text-decoration: none;
 }
+.guide-template-default.et_no_sidebar .intro-element h2 a:hover,
 .guide-template-default.et_no_sidebar #page-container #main-content .intro-element h2 a:hover,
+.guide-template-default.tg-site-layout--stretched .intro-element h2 a:hover,
 .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element h2 a:hover {
   color: white;
   text-decoration: underline;
 }
+.guide-template-default.et_no_sidebar .intro-element p,
 .guide-template-default.et_no_sidebar #page-container #main-content .intro-element p,
+.guide-template-default.tg-site-layout--stretched .intro-element p,
 .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element p {
   font-size: 1.25rem;
 }
+.guide-template-default.et_no_sidebar .intro-element > div,
 .guide-template-default.et_no_sidebar #page-container #main-content .intro-element > div,
+.guide-template-default.tg-site-layout--stretched .intro-element > div,
 .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element > div {
   min-height: 13em;
 }
+.guide-template-default.et_no_sidebar .intro-element ol,
 .guide-template-default.et_no_sidebar #page-container #main-content .intro-element ol,
+.guide-template-default.tg-site-layout--stretched .intro-element ol,
 .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element ol {
   font-size: 1.25rem;
   list-style: none;
@@ -223,16 +248,22 @@
   margin-left: 9rem;
   line-height: 2rem;
 }
+.guide-template-default.et_no_sidebar .intro-element ol li,
 .guide-template-default.et_no_sidebar #page-container #main-content .intro-element ol li,
+.guide-template-default.tg-site-layout--stretched .intro-element ol li,
 .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element ol li {
   margin-bottom: 1em;
 }
 @media screen and (max-width: 768px) {
+  .guide-template-default.et_no_sidebar .intro-element,
   .guide-template-default.et_no_sidebar #page-container #main-content .intro-element,
+  .guide-template-default.tg-site-layout--stretched .intro-element,
   .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element {
     padding: 0;
   }
+  .guide-template-default.et_no_sidebar .intro-element ol,
   .guide-template-default.et_no_sidebar #page-container #main-content .intro-element ol,
+  .guide-template-default.tg-site-layout--stretched .intro-element ol,
   .guide-template-default.tg-site-layout--stretched #page-container #main-content .intro-element ol {
     text-indent: 0;
     margin: 1.5em;
