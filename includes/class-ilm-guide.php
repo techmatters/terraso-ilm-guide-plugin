@@ -39,7 +39,6 @@ class ILM_Guide {
 		add_action( 'init', [ __CLASS__, 'guide_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'allow_svg_tags' ] );
 		add_filter( 'safe_style_css', [ __CLASS__, 'allow_svg_css' ] );
-		add_action( 'pre_get_posts', [ __CLASS__, 'guide_rewrite' ] );
 		add_filter( 'manage_guide_posts_columns', [ __CLASS__, 'guide_admin_columns' ] );
 		add_action( 'manage_guide_posts_custom_column', [ __CLASS__, 'guide_type_column_content' ], 10, 2 );
 		add_action( 'init', [ __CLASS__, 'register_post_type' ] );
