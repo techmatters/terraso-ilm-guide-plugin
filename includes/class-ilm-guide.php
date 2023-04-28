@@ -267,11 +267,7 @@ class ILM_Guide {
 	 * @param string $layout           Zakra layout name.
 	 */
 	public static function zakra_current_layout( $layout ) {
-		if ( 'guide' === get_post_type() ) {
-			return 'tg-site-layout--stretched';
-		}
-
-		return $layout;
+		return 'tg-site-layout--stretched';
 	}
 
 	/**
