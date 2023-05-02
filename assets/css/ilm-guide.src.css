@@ -74,13 +74,13 @@
 .guide-template-default.tg-site-layout--stretched.guide-intro .entry-content {
   padding-bottom: 0;
 }
-.guide-template-default.et_no_sidebar.guide-intro .entry-content div:last-child,
-.guide-template-default.tg-site-layout--stretched.guide-intro .entry-content div:last-child {
+.guide-template-default.et_no_sidebar.guide-intro .entry-content .element-toc,
+.guide-template-default.tg-site-layout--stretched.guide-intro .entry-content .element-toc {
   padding-bottom: 8em;
 }
 @media screen and (max-width: 768px) {
-  .guide-template-default.et_no_sidebar.guide-intro .entry-content div:last-child,
-  .guide-template-default.tg-site-layout--stretched.guide-intro .entry-content div:last-child {
+  .guide-template-default.et_no_sidebar.guide-intro .entry-content .element-toc,
+  .guide-template-default.tg-site-layout--stretched.guide-intro .entry-content .element-toc {
     padding-bottom: 2em;
   }
 }
@@ -244,9 +244,9 @@
   font-size: 1.25rem;
   list-style: none;
   margin: 2em;
-  text-indent: -7.2rem;
-  margin-left: 9rem;
-  line-height: 2rem;
+  text-indent: -6.5rem;
+  margin-left: 9.5rem;
+  line-height: 1.7rem;
 }
 .guide-template-default.et_no_sidebar .intro-element ol li,
 .guide-template-default.et_no_sidebar #page-container #main-content .intro-element ol li,
