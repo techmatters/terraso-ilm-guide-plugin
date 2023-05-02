@@ -91,7 +91,7 @@
 			padding-bottom: 0;
 
 			// add white space before footer
-			div:last-child {
+			.element-toc {
 				padding-bottom: 8em;
 
 				@media screen and (max-width: 768px) {
