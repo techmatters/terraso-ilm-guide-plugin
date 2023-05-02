@@ -74,6 +74,10 @@
 .guide-template-default.tg-site-layout--stretched.guide-intro .entry-content {
   padding-bottom: 0;
 }
+.guide-template-default.et_no_sidebar.guide-intro .entry-content .getting-started,
+.guide-template-default.tg-site-layout--stretched.guide-intro .entry-content .getting-started {
+  padding-bottom: 2em;
+}
 .guide-template-default.et_no_sidebar.guide-intro .entry-content .element-toc,
 .guide-template-default.tg-site-layout--stretched.guide-intro .entry-content .element-toc {
   padding-bottom: 8em;
