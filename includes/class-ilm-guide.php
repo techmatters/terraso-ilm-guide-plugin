@@ -343,7 +343,7 @@ class ILM_Guide {
 			'query_var'             => true,
 			'menu_position'         => 20,
 			'menu_icon'             => 'dashicons-book',
-			'supports'              => [ 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes' ],
+			'supports'              => [ 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'page-attributes', 'revisions' ],
 			'taxonomies'            => [ 'ilm_tag' ],
 			'show_in_graphql'       => false,
 		];
