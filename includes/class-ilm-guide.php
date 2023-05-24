@@ -75,7 +75,7 @@ class ILM_Guide {
 	 * Add actions and filters.
 	 */
 	public static function late_hooks() {
-		if ( 'guide' !== get_post_type() ) {
+		if ( self::POST_TYPE !== get_post_type() ) {
 			return;
 		}
 
@@ -242,7 +242,7 @@ class ILM_Guide {
 	 */
 	public static function add_meta_boxes() {
 		if ( class_exists( 'Zakra_Meta_Box_Page_Settings' ) ) {
-			add_meta_box( 'zakra-page-setting', esc_html__( 'Page Settings', 'zakra' ), 'Zakra_Meta_Box_Page_Settings::render', [ 'guide' ] );
+			add_meta_box( 'zakra-page-setting', esc_html__( 'Page Settings', 'zakra' ), 'Zakra_Meta_Box_Page_Settings::render', [ self::POST_TYPE ] );
 		}
 	}
 
@@ -348,7 +348,7 @@ class ILM_Guide {
 			'show_in_graphql'       => false,
 		];
 
-		register_post_type( 'guide', $args );
+		register_post_type( self::POST_TYPE, $args );
 	}
 
 	/**
@@ -424,8 +424,8 @@ class ILM_Guide {
 			'show_in_graphql'       => false,
 		];
 
-		register_taxonomy( 'ilm_type', [ 'guide' ], $ilm_tyoe_args );
-		register_taxonomy( 'ilm_tag', [ 'guide' ], $ilm_type_args );
+		register_taxonomy( 'ilm_type', [ self::POST_TYPE ], $ilm_tyoe_args );
+		register_taxonomy( 'ilm_tag', [ self::POST_TYPE ], $ilm_type_args );
 	}
 
 	/**
