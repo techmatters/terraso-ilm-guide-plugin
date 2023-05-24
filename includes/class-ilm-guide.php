@@ -43,6 +43,7 @@ class ILM_Guide {
 		add_action( 'manage_guide_posts_custom_column', [ __CLASS__, 'guide_type_column_content' ], 10, 2 );
 		add_action( 'init', [ __CLASS__, 'register_post_type' ] );
 		add_action( 'init', [ __CLASS__, 'register_taxonomy' ] );
+		add_filter( 'acf/settings/remove_wp_meta_box', '__return_false' );
 	}
 
 	/**
