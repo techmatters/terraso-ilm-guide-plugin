@@ -1,6 +1,6 @@
 <?php
 /**
- * ILM Guide WordPress pkugin..
+ * ILM Guide WordPress plugin.
  *
  * @package ILMGuide
  */
