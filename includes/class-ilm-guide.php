@@ -349,7 +349,7 @@ class ILM_Guide {
 			'show_in_graphql'       => false,
 		];
 
-		register_post_type( self::POST_TYPE, $args );
+		register_post_type( self::POST_TYPE, $args ); // phpcs:ignore WordPress.NamingConventions.ValidPostTypeSlug.NotStringLiteral
 	}
 
 	/**
