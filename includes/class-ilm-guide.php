@@ -452,7 +452,6 @@ class ILM_Guide {
 
 		return $post_types;
 	}
-
 }
 
 add_action( 'after_setup_theme', [ 'ILM_Guide', 'hooks' ] );
