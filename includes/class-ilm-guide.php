@@ -216,7 +216,7 @@ class ILM_Guide {
 	 * @param string $meta_type Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user',
 	 *                          or any other object type with an associated meta table.
 	 */
-	public static function disable_page_header( $value, $object_id, $meta_key, $single, $meta_type ) {
+	public static function disable_page_header( $value, $object_id, $meta_key, $single, $meta_type ) { // phpcs:ignore  Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		// Zakra.
 		if ( 'zakra_page_header' === $meta_key ) {
 			return '0';
@@ -266,7 +266,7 @@ class ILM_Guide {
 	 *
 	 * @param string $layout           Zakra layout name.
 	 */
-	public static function zakra_current_layout( $layout ) {
+	public static function zakra_current_layout( $layout ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
 		return 'tg-site-layout--stretched';
 	}
 
